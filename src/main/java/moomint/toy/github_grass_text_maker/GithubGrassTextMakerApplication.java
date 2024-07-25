@@ -1,6 +1,7 @@
 package moomint.toy.github_grass_text_maker;
 
-import moomint.toy.github_grass_text_maker.view.InputView;
+import moomint.toy.github_grass_text_maker.view.MainView;
+import moomint.toy.github_grass_text_maker.view.SingleCommitView;
 
 //@SpringBootApplication
 public class GithubGrassTextMakerApplication {
@@ -8,8 +9,8 @@ public class GithubGrassTextMakerApplication {
 	public static void main(String[] args) {
 //		SpringApplication.run(GithubGrassTextMakerApplication.class, args);
 
-		InputView inputView = new InputView();
-		inputView.input();
+		MainView mainView = new MainView();
+		mainView.run();
 	}
 
 }

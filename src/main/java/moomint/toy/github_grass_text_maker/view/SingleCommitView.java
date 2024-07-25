@@ -9,9 +9,9 @@ import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 import java.util.Scanner;
 
-public class InputView {
+public class SingleCommitView {
 
-    public void input() {
+    public void run() {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("commit date(yyyy/MM/dd HH:mm): ");
