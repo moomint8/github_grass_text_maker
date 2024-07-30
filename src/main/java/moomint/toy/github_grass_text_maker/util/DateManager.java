@@ -12,6 +12,21 @@ public class DateManager {
     private static final String DATE_TIME_PATTERN = "^(19|20)\\d\\d\\/(0[1-9]|1[0-2])\\/(0[1-9]|[12]\\d|3[01])\\s([01]\\d|2[0-3]):([0-5]\\d)$";
 
     public String formatDate() {
+
+        LocalDateTime localDateTime = inputDateTime();
+
+        return localDateTime.atOffset(ZoneOffset.ofHours(9))
+                .format(DateTimeFormatter.ofPattern("EEE MMM dd HH:mm:ss yyyy +0900", Locale.ENGLISH));
+    }
+
+    public String formatDate(LocalDateTime localDateTime) {
+
+        return localDateTime.atOffset(ZoneOffset.ofHours(9))
+                .format(DateTimeFormatter.ofPattern("EEE MMM dd HH:mm:ss yyyy +0900", Locale.ENGLISH));
+    }
+
+    public LocalDateTime inputDateTime() {
+
         Scanner scanner = new Scanner(System.in);
         LocalDateTime localDateTime = null;
 
@@ -33,8 +48,7 @@ public class DateManager {
             }
         }
 
-        return localDateTime.atOffset(ZoneOffset.ofHours(9))
-                .format(DateTimeFormatter.ofPattern("EEE MMM dd HH:mm:ss yyyy +0900", Locale.ENGLISH));
+        return localDateTime;
     }
 
     private LocalDateTime getDate(String input) {

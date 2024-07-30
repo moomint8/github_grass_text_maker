@@ -35,7 +35,8 @@ public class MainView {
                 case "1" -> {
                     commitSelector.singleCommit(repoUrl, dateManager, githubManager);
                 }
-                case "2", "3" -> System.out.println("구현예정");
+                case "2" -> commitSelector.multipleCommit(repoUrl, dateManager, githubManager);
+                case "3" -> System.out.println("구현예정");
                 case "999" -> {
                     System.out.println("프로그램 종료");
                     return;
