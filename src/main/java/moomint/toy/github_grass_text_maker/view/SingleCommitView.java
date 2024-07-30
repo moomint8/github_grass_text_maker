@@ -1,29 +1,20 @@
 package moomint.toy.github_grass_text_maker.view;
 
+import moomint.toy.github_grass_text_maker.input.DateManager;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.time.LocalDateTime;
-import java.time.ZoneOffset;
-import java.time.format.DateTimeFormatter;
-import java.util.Locale;
 import java.util.Scanner;
 
 public class SingleCommitView {
 
-    public void run() {
+    public void run(String repoUrl, DateManager dateManager) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("commit date(yyyy/MM/dd HH:mm): ");
-        String dateInput = scanner.nextLine();
-        LocalDateTime localDateTime = LocalDateTime.parse(dateInput, DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm"));
-
-        // 한국 시간대로 변환
-        String commitDateWithOffset = localDateTime.atOffset(ZoneOffset.ofHours(9))
-                .format(DateTimeFormatter.ofPattern("EEE MMM dd HH:mm:ss yyyy +0900", Locale.ENGLISH));
-
-        System.out.print("GitHub 레포지토리 주소를 입력하세요: ");
-        String repoUrl = scanner.nextLine();
+        // commit 날짜 입력
+        System.out.println("Commit할 날짜를 입력해주세요.");
+        String commitDateWithOffset = dateManager.formatDate();
 
         File commitFileLocation = new File("commitFileLocation");
         if (!commitFileLocation.exists()) {
