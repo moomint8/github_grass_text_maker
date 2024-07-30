@@ -1,4 +1,4 @@
-package moomint.toy.github_grass_text_maker.input;
+package moomint.toy.github_grass_text_maker.util;
 
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;

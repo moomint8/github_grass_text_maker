@@ -1,20 +1,12 @@
-package moomint.toy.github_grass_text_maker.view;
-
-import moomint.toy.github_grass_text_maker.input.DateManager;
+package moomint.toy.github_grass_text_maker.util;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Scanner;
 
-public class SingleCommitView {
+public class GithubManager {
 
-    public void run(String repoUrl, DateManager dateManager) {
-        Scanner scanner = new Scanner(System.in);
-
-        // commit 날짜 입력
-        System.out.println("Commit할 날짜를 입력해주세요.");
-        String commitDateWithOffset = dateManager.formatDate();
+    public File commiter(String commitDate) {
 
         File commitFileLocation = new File("commitFileLocation");
         if (!commitFileLocation.exists()) {
@@ -32,23 +24,35 @@ public class SingleCommitView {
         try {
             runCommand("git init", commitFileLocation);  // 필요시 리포지토리 초기화
             runCommand("git add text.txt", commitFileLocation);
-            runCommand(String.format("git commit -m \"Initial commit\" --date=\"%s\"", commitDateWithOffset), commitFileLocation);
+            runCommand(String.format("git commit -m \"Initial commit\" --date=\"%s\"", commitDate), commitFileLocation);
 
             if (file.delete()) {
                 runCommand("git add -u", commitFileLocation);
-                runCommand(String.format("git commit -m \"Delete text.txt\" --date=\"%s\"", commitDateWithOffset), commitFileLocation);
+                runCommand(String.format("git commit -m \"Delete text.txt\" --date=\"%s\"", commitDate), commitFileLocation);
             } else {
                 System.err.println("파일 삭제 실패");
             }
 
+            System.out.println(commitDate + " Commit 완료");
+        } catch (IOException | InterruptedException e) {
+            System.out.println("failed commit: " + e.getMessage());
+            throw new RuntimeException(e);
+        }
+
+        return commitFileLocation;
+    }
+
+    public void pusher(String repoUrl, File commitFileLocation) {
+        try {
             runCommand("git remote add origin " + repoUrl, commitFileLocation);
             runCommand("git branch -M main", commitFileLocation);
             runCommand("git push -u origin main", commitFileLocation);
-
-            System.out.println("작업이 완료되었습니다.");
         } catch (IOException | InterruptedException e) {
+            System.out.println("failed push: " + e.getMessage());
             throw new RuntimeException(e);
         }
+
+        System.out.println("작업이 완료되었습니다.");
     }
 
     private void runCommand(String command, File workDir) throws IOException, InterruptedException {

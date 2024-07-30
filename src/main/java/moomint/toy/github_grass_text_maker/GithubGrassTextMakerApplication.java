@@ -1,7 +1,6 @@
 package moomint.toy.github_grass_text_maker;
 
 import moomint.toy.github_grass_text_maker.view.MainView;
-import moomint.toy.github_grass_text_maker.view.SingleCommitView;
 
 //@SpringBootApplication
 public class GithubGrassTextMakerApplication {

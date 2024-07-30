@@ -1,6 +1,7 @@
 package moomint.toy.github_grass_text_maker.view;
 
-import moomint.toy.github_grass_text_maker.input.DateManager;
+import moomint.toy.github_grass_text_maker.util.DateManager;
+import moomint.toy.github_grass_text_maker.util.GithubManager;
 
 import java.util.Scanner;
 
@@ -12,6 +13,8 @@ public class MainView {
 
         Scanner scanner = new Scanner(System.in);
         DateManager dateManager = new DateManager();
+        GithubManager githubManager = new GithubManager();
+        CommitSelector commitSelector = new CommitSelector();
 
         String repoUrl = getRepositoryAddress();
 
@@ -30,8 +33,7 @@ public class MainView {
             switch (input) {
                 case "0" -> repoUrl = getRepositoryAddress();
                 case "1" -> {
-                    SingleCommitView singleCommit = new SingleCommitView();
-                    singleCommit.run(repoUrl, dateManager);
+                    commitSelector.singleCommit(repoUrl, dateManager, githubManager);
                 }
                 case "2", "3" -> System.out.println("구현예정");
                 case "999" -> {
