@@ -14,8 +14,6 @@
 
 ### 사용법
 1. 깃허브에 레포지토리를 생성합니다.
-   - 이미 생성된 레포지토리를 사용해도 무관하나, 만약을 위해 새로 생성하는 것을 권장합니다.
-   - 특히 팀프로젝트면 팀원들에게 인기만점이 될 수 있으니 개인 프로젝트를 권고합니다.
    -  <details>
         <summary><b>대상 레포지토리가 Private인 경우</b></summary>
         <div markdown="1">
@@ -31,6 +29,8 @@
           </ul>
         </div>
       </details>
+   - 이미 생성된 레포지토리를 사용해도 무관하나, 만약을 위해 새로 생성하는 것을 권장합니다.
+   - 특히 팀프로젝트면 팀원들에게 인기만점이 될 수 있으니 개인 프로젝트를 권고합니다.
 2. 해당 레포지토리를 clone 합니다.<br>
    ![image](https://github.com/user-attachments/assets/f2e3962f-7e89-4571-b4a4-798a5ee01c34)
 3. 이 프로젝트의 GithubGrassTextMakerApplication을 실행합니다.
