@@ -20,30 +20,30 @@
           <ul>
             <li>자신의 깃허브 프로필 접속</li>
             <li>하단 잔디의 Contribution setting 클릭</li>
-            <img src="https://github.com/user-attachments/assets/989eea8a-1598-42ed-9e2e-f94ab93ba023">
+            <img src="https://github.com/user-attachments/assets/38da6537-db44-4b9a-b42d-b08f1f5f3c8f">
             <li>Private contributions 체크</li>
-            <img src="https://github.com/user-attachments/assets/2d7a075f-e829-42ff-b673-1581b3b1c6aa">
+            <img src="https://github.com/user-attachments/assets/9e0f1392-9a3f-43f7-8f6e-ec80d4deeeec">
           <div><b>해당 체크가 되어있지 않으면 다른 유저는 Private 레포지토리의 잔디가 보이지 않습니다.<br>
                   해당 체크를 하더라도 레포지토리의 내용은 보이지 않으니 보안은 안심하셔도 됩니다.</b></div>
-                  <img src="https://github.com/user-attachments/assets/7ce06005-37ba-4dfe-974d-0809b6f75503">
+                  <img src="https://github.com/user-attachments/assets/4425f3b1-4a6b-4062-b1dd-2851ca2801e6">
           </ul>
         </div>
       </details>
    - 이미 생성된 레포지토리를 사용해도 무관하나, 만약을 위해 새로 생성하는 것을 권장합니다.
    - 특히 팀프로젝트면 팀원들에게 인기만점이 될 수 있으니 개인 프로젝트를 권고합니다.
 2. 해당 레포지토리를 clone 합니다.<br>
-   ![image](https://github.com/user-attachments/assets/f2e3962f-7e89-4571-b4a4-798a5ee01c34)
+   ![image](https://github.com/user-attachments/assets/f4c02b45-8d06-4a57-a681-30300053be80)
 3. 이 프로젝트의 GithubGrassTextMakerApplication을 실행합니다.
 4. 아까 clone한 레포지토리를 붙여넣습니다.
-   ![image](https://github.com/user-attachments/assets/3f3af41e-7e65-4b53-bd99-63e0eea83bd1)
+   ![image](https://github.com/user-attachments/assets/0cfcb956-b147-40f3-9c9e-e7a269e840be)
 5. 원하는 메뉴를 선택합니다.<br>
-   ![image](https://github.com/user-attachments/assets/1c63c68a-4871-4161-8054-894503cd32d6)
+   ![image](https://github.com/user-attachments/assets/4dbd306c-2fb5-437f-94e9-4ca7a3730dec)
 6. <details markdown="1">
      <summary>특정 날짜 commit</summary>
      <div>
        <ul>
          <li>날짜 입력</li>
-         <img src="https://github.com/user-attachments/assets/7b9a7dae-c29c-4f99-8eda-bb4092a323f6">
+         <img src="https://github.com/user-attachments/assets/09bcde8f-c665-4209-8d62-d88e29bf6542">
        </ul>
      </div>
    </details>
@@ -52,7 +52,7 @@
      <div>
        <ul>
          <li>시작 날짜, 종료 날짜 입력</li>
-         <img src="https://github.com/user-attachments/assets/87af1ee6-e801-45b3-86bb-9c45b497dbe7">
+         <img src="https://github.com/user-attachments/assets/f0c904b1-835b-4499-a13d-7725594b7110">
        </ul>
      </div>
    </details>
