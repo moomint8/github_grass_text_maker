@@ -5,27 +5,16 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.Scanner;
 
 public class GithubManager {
 
-    public File commiter(String commitDate) {
+    public File commiter(String commitDate, int selectFileType) {
 
         File commitFileLocation = new File("commitFileLocation");
         if (!commitFileLocation.exists()) {
             System.out.println("해당 디렉토리가 존재하지 않아 디렉토리를 생성합니다.");
             commitFileLocation.mkdir();
         }
-
-        System.out.println("생성할 파일의 타입을 선택하세요.");
-        System.out.println("1. 자바");
-        System.out.println("2. 파이썬");
-        System.out.println("3. 텍스트 파일");
-
-        System.out.print("입력: ");
-        Scanner sc = new Scanner(System.in);
-
-        int selectFileType = sc.nextInt();
 
         try {
 

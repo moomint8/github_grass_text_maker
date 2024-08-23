@@ -5,6 +5,7 @@ import moomint.toy.github_grass_text_maker.util.GithubManager;
 
 import java.io.File;
 import java.time.LocalDateTime;
+import java.util.Scanner;
 
 public class CommitSelector {
 
@@ -13,7 +14,9 @@ public class CommitSelector {
         System.out.println("Commit할 날짜를 입력해주세요.");
         String commitDateWithOffset = dateManager.formatDate();
 
-        File commitFileLocation = githubManager.commiter(commitDateWithOffset);
+        int fileType = selectFileType();
+
+        File commitFileLocation = githubManager.commiter(commitDateWithOffset, fileType);
 
         githubManager.pusher(repoUrl, commitFileLocation);
     }
@@ -34,15 +37,29 @@ public class CommitSelector {
 
         LocalDateTime currentDate = startDate;
 
+        int fileType = selectFileType();
+
         while (!currentDate.isAfter(endDate)) {
             String commitDateWithOffset = dateManager.formatDate(currentDate);
 
-            commitFileLocation = githubManager.commiter(commitDateWithOffset);
+            commitFileLocation = githubManager.commiter(commitDateWithOffset, fileType);
 
             // 다음 날짜로 이동
             currentDate = currentDate.plusDays(1);
         }
 
         githubManager.pusher(repoUrl, commitFileLocation);
+    }
+
+    private int selectFileType() {
+        System.out.println("생성할 파일의 타입을 선택하세요.");
+        System.out.println("1. 자바");
+        System.out.println("2. 파이썬");
+        System.out.println("3. 텍스트 파일");
+
+        System.out.print("입력: ");
+        Scanner sc = new Scanner(System.in);
+
+        return sc.nextInt();
     }
 }
